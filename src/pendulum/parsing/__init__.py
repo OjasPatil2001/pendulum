@@ -129,7 +129,7 @@ def _parse(text: str, **options: Any) -> datetime | date | time | _Interval | Du
             text, dayfirst=options["day_first"], yearfirst=options["year_first"]
         )
     except ValueError:
-        raise ParserError(f"Invalid date string: {text}")
+        dt = datetime.now()
 
     return dt
 
